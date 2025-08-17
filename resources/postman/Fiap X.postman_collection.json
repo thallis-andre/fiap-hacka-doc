@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "04b50f4c-3c62-4e6d-b75c-9b57efe00f21",
+		"name": "Fiap X",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10261834"
+	},
+	"item": [
+		{
+			"name": "Identity",
+			"item": [
+				{
+					"name": "Sign Up",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const { name, email, password } = JSON.parse(pm.request.body.raw);\r",
+									"pm.environment.set('User.Name', name)\r",
+									"pm.environment.set('User.Email', email)\r",
+									"pm.environment.set('User.Password', password)\r",
+									"\r",
+									"const { access_token: accessToken } = pm.response.json()\r",
+									"pm.environment.set('AccessToken', accessToken)\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"1{{$randomPassword}}!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURLIdentity}}/v1/auth/sign-up",
+							"host": [
+								"{{BaseURLIdentity}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign In",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const { access_token: accessToken } = pm.response.json()\r",
+									"pm.environment.set('AccessToken', accessToken)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{User.Email}}\",\r\n    \"password\": \"{{User.Password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURLIdentity}}/v1/auth/sign-in",
+							"host": [
+								"{{BaseURLIdentity}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accessToken\": \"{{AccessToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURLIdentity}}/v1/auth/verify",
+							"host": [
+								"{{BaseURLIdentity}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "Create Video",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const { id, signedUrlForUpload } = pm.response.json()\r",
+									"\r",
+									"pm.collectionVariables.set('Video.Id', id)\r",
+									"pm.collectionVariables.set('Video.UploadSignedUrl', signedUrlForUpload)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filename\": \"{{$randomAdjective}} {{$randomNoun}}\",\r\n    \"snapshotIntervalInSeconds\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/v1/me/videos",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"v1",
+								"me",
+								"videos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File - Sucesso",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/C:/Users/fiap/path/to/video.mp4"
+							}
+						},
+						"url": {
+							"raw": "{{Video.UploadSignedUrl}}",
+							"host": [
+								"{{Video.UploadSignedUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File - Error",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/C:/Users/fiap/path/to/image.png"
+							}
+						},
+						"url": {
+							"raw": "{{Video.UploadSignedUrl}}",
+							"host": [
+								"{{Video.UploadSignedUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List My Videos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/v1/me/videos",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"v1",
+								"me",
+								"videos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Video",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/v1/me/videos/:id",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"v1",
+								"me",
+								"videos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{Video.Id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download My Content",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/v1/me/videos/:id/download?target=zip&target=video",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"v1",
+								"me",
+								"videos",
+								":id",
+								"download"
+							],
+							"query": [
+								{
+									"key": "target",
+									"value": "zip"
+								},
+								{
+									"key": "target",
+									"value": "video"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{VideoId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{AccessToken}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "Video.Id",
+			"value": ""
+		},
+		{
+			"key": "Video.UploadSignedUrl",
+			"value": ""
+		}
+	]
+}
