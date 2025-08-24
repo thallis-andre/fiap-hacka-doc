@@ -1,6 +1,4 @@
-# FIAP X
-
-## FIAP - Software Architecture Hackaton - Fase 5
+# FIAP - Software Architecture Hackaton - Fase 5
 
 Este projeto foi desenvolvido durante a `Fase V` do curso de `Arquitetura de Software` da FIAP como requisito para avaliação.
 
