@@ -43,11 +43,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURLIdentity}}/v1/auth/sign-up",
+							"raw": "{{BaseURLIdentity}}/dev/identity/v1/auth/sign-up",
 							"host": [
 								"{{BaseURLIdentity}}"
 							],
 							"path": [
+								"dev",
+								"identity",
 								"v1",
 								"auth",
 								"sign-up"
@@ -84,11 +86,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURLIdentity}}/v1/auth/sign-in",
+							"raw": "{{BaseURLIdentity}}/dev/identity/v1/auth/sign-in",
 							"host": [
 								"{{BaseURLIdentity}}"
 							],
 							"path": [
+								"dev",
+								"identity",
 								"v1",
 								"auth",
 								"sign-in"
@@ -112,11 +116,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURLIdentity}}/v1/auth/verify",
+							"raw": "{{BaseURLIdentity}}/dev/identity/v1/auth/verify",
 							"host": [
 								"{{BaseURLIdentity}}"
 							],
 							"path": [
+								"dev",
+								"identity",
 								"v1",
 								"auth",
 								"verify"
@@ -160,11 +166,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/v1/me/videos",
+							"raw": "{{BaseURL}}/dev/api/v1/me/videos",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
+								"dev",
+								"api",
 								"v1",
 								"me",
 								"videos"
@@ -225,11 +233,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/v1/me/videos",
+							"raw": "{{BaseURL}}/dev/api/v1/me/videos",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
+								"dev",
+								"api",
 								"v1",
 								"me",
 								"videos"
@@ -244,11 +254,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/v1/me/videos/:id",
+							"raw": "{{BaseURL}}/dev/api/v1/me/videos/:id",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
+								"dev",
+								"api",
 								"v1",
 								"me",
 								"videos",
@@ -270,11 +282,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/v1/me/videos/:id/download?target=zip&target=video",
+							"raw": "{{BaseURL}}/dev/api/v1/me/videos/:id/download?target=zip&target=video",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
+								"dev",
+								"api",
 								"v1",
 								"me",
 								"videos",
