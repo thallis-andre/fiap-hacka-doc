@@ -18,7 +18,7 @@ A FIAP X precisa de uma plataforma onde os usuários possam realizar autenticaç
 
 ### Event Storming :[Ver no Miro 👁️](https://miro.com/app/board/o9J_lHsdpmE=/?moveToWidget=3458764614656328237&cot=10):
 
-![Event Storming](../resources/event-storming.png)
+![Event Storming](./resources/event-storming.png)
 
 A jornada do usuário começa com a autenticação na plataforma, de posse de um token de acesso o usuário consegue acessar as postagens que já fez ou realizar novas postagens.
 
@@ -28,7 +28,7 @@ Após a subida do vídeo o arquivo é processado por um serviço que terá uma s
 
 ### Arquitetura Cloud :[Ver no Miro 👁️](https://miro.com/app/board/o9J_lHsdpmE=/?moveToWidget=3458764614731168004&cot=10):
 
-![Cloud Architecture](../resources/cloud-architecture.png)
+![Cloud Architecture](./resources/cloud-architecture.png)
 
 Foi utilizado um cluster gerenciado utilizando o serviço EKS da AWS com um único nó configurado em uma instância T3.Medium. Esta configuração é suficiente para a demonstração de todos os recursos do projeto.
 
@@ -90,17 +90,17 @@ Os arquivos também foram exportados para a pasta `/resources/swagger` e podem s
 
 ### API
 
-![Fiap X API](../resources/evidence/fiap-x-api-swagger-endpoints.png)
-![Fiap X API](../resources/evidence/fiap-x-api-swagger-models.png)
+![Fiap X API](./resources/evidence/fiap-x-api-swagger-endpoints.png)
+![Fiap X API](./resources/evidence/fiap-x-api-swagger-models.png)
 
 ### Identity
 
-![Fiap X Identity](../resources/evidence/fiap-x-identity-swagger-endpoints.png)
-![Fiap X Identity](../resources/evidence/fiap-x-identity-swagger-models.png)
+![Fiap X Identity](./resources/evidence/fiap-x-identity-swagger-endpoints.png)
+![Fiap X Identity](./resources/evidence/fiap-x-identity-swagger-models.png)
 
 ## Postman
 
-O postman também é uma ferramenta de trabalho muito prática para o desenvolvimento e a collection e environment para atuação no serviço está disponível em https://github.com/thallis-andre/fiap-hacka-doc/resources/postman
+O postman também é uma ferramenta de trabalho muito prática para o desenvolvimento e a collection e environment para atuação no serviço está disponível em https://github.com/thallis-andre/fiap-hacka-doc/tree/main/resources/postman
 
 ## Data Engineering
 
@@ -131,64 +131,64 @@ Para garantir o isolamento entre as entidades de cada serviço foi realizada a c
 
 #### Pipeline
 
-![Event Storming](../resources/evidence/fiap-x-api-pipeline.png)
+![Event Storming](./resources/evidence/fiap-x-api-pipeline.png)
 
 #### Unit Tests
 
-![Event Storming](../resources/evidence/fiap-x-api-unit-test.png)
+![Event Storming](./resources/evidence/fiap-x-api-unit-test.png)
 
 #### Integration Testes
 
-![Event Storming](../resources/evidence/fiap-x-api-integration-test.png)
+![Event Storming](./resources/evidence/fiap-x-api-integration-test.png)
 
 ### Fiap X Worker
 
 #### Pipeline
 
-![Event Storming](../resources/evidence/fiap-x-worker-pipeline.png)
+![Event Storming](./resources/evidence/fiap-x-worker-pipeline.png)
 
 #### Unit Tests
 
-![Event Storming](../resources/evidence/fiap-x-worker-unit-test.png)
+![Event Storming](./resources/evidence/fiap-x-worker-unit-test.png)
 
 #### Integration Testes
 
-![Event Storming](../resources/evidence/fiap-x-worker-integration-test.png)
+![Event Storming](./resources/evidence/fiap-x-worker-integration-test.png)
 
 ### Fiap X Identity
 
 #### Pipeline
 
-![Event Storming](../resources/evidence/fiap-x-identity-pipeline.png)
+![Event Storming](./resources/evidence/fiap-x-identity-pipeline.png)
 
 #### Unit Tests
 
-![Event Storming](../resources/evidence/fiap-x-identity-unit-test.png)
+![Event Storming](./resources/evidence/fiap-x-identity-unit-test.png)
 
 #### Integration Testes
 
-![Event Storming](../resources/evidence/fiap-x-identity-integration-test.png)
+![Event Storming](./resources/evidence/fiap-x-identity-integration-test.png)
 
 ### Fiap X Notifications
 
 #### Pipeline
 
-![Event Storming](../resources/evidence/fiap-x-notifications-pipeline.png)
+![Event Storming](./resources/evidence/fiap-x-notifications-pipeline.png)
 
 #### Unit Tests
 
-![Event Storming](../resources/evidence/fiap-x-notifications-unit-test.png)
+![Event Storming](./resources/evidence/fiap-x-notifications-unit-test.png)
 
 #### Integration Testes
 
-![Event Storming](../resources/evidence/fiap-x-notifications-integration-test.png)
+![Event Storming](./resources/evidence/fiap-x-notifications-integration-test.png)
 
 ### Notificações Enviadas por Email:
 
 #### Sucesso
 
-![Notificação de Sucesso](../resources/evidence/fiap-x-notifications-template-success.png)
+![Notificação de Sucesso](./resources/evidence/fiap-x-notifications-template-success.png)
 
 #### Falha
 
-![Notificação de falha](../resources/evidence/fiap-x-notifications-template-failure.png)
+![Notificação de falha](./resources/evidence/fiap-x-notifications-template-failure.png)
