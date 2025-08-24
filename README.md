@@ -8,7 +8,7 @@ Este projeto foi desenvolvido durante a `Fase V` do curso de `Arquitetura de Sof
 
 ## Apresentação em Vídeo
 
-- [Assistir no YouTube]()
+- [Assistir no YouTube](https://youtu.be/VOYnrWaj3gY)
 
 ## O Desafio
 
